@@ -1,0 +1,28 @@
+<div>
+    <div class="row div1">
+        <div class="col-lg-3"><p>Name:{{details.name}}</p></div>
+        <div class="col-lg-3"><p>Mobile:{{details.mobile}}</p></div>
+        <div class="col-lg-3"><p>Email:{{details.email}}</p></div>
+        <div class="col-lg-3"><p>Date of Birth:{{details.dob}}</p></div>
+    </div>
+    <div class="row div2">
+        <div class="col-lg-6">
+            <h2>Address:</h2>
+            <div class="col-lg-4">
+                <p>Addressline:{{details.address.addressline}}</p>
+                <p>City:{{details.address.city}}</p>
+                <p>State:{{details.address.state}}</p> 
+                <p>Pincode:{{details.address.pincode}}</p>
+            </div>     
+        </div>
+        <div class="col-lg-6">
+            <h2>Education:</h2>
+            <div class="col-lg-4" *ngFor="let education of details.education">
+                <p>Qualification:{{education.qualification}}</p>
+                <p>Year:{{education.year}}</p>
+                <p>Percentage:{{education.percentage}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <p>{{details|json}}</p> -->

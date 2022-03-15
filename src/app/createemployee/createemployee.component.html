@@ -1,0 +1,164 @@
+<form [formGroup]="createemployee">
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> name:</label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" formControlName="name" id="name" class="form-control" placeholder="Enter name" name="name" [ngClass]="createemployee.get('name')?.invalid && createemployee.get('name')?.touched? 'ab':'sc'">
+            <div class="N" *ngIf="createemployee.get('name')?.invalid && createemployee.get('name')?.touched">
+                    <p *ngIf="createemployee.get('name')?.errors?.['required']">this field is required</p>
+                    <p *ngIf="createemployee.get('name')?.errors?.['min']">min 3 charters</p>
+                    <p *ngIf="createemployee.get('name')?.errors?.['max']">max 15 charters</p>
+                    
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="mobile"> mobile: </label>
+        </div>
+        <div class="col-sm-8">
+            <input   type="text" id="mobile" formControlName="mobile" class="form-control" placeholder="Enter number" name="mobile" [ngClass]="createemployee.get('mobile')?.invalid && createemployee.get('mobile')?.touched? 'ab':'sc'">
+            <div class="M" *ngIf="createemployee.get('mobile')?.invalid && createemployee.get('mobile')?.touched">
+                <p *ngIf="createemployee.get('mobile')?.errors?.['required']">plz enter mobile number</p>
+                <p *ngIf="createemployee.get('mobile')?.errors?.['min']">min 10 numbers</p>
+                <p *ngIf="createemployee.get('mobile')?.errors?.['max']">max 10 numbers</p>
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="email"> email:</label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="email"  formControlName="email" class="form-control" placeholder="Enter email" name="email" [ngClass]="createemployee.get('email')?.invalid && createemployee.get('email')?.touched? 'ab':'sc'" >
+        <div class="N" *ngIf="createemployee.get('email')?.invalid && createemployee.get('email')?.touched">
+            <p *ngIf="createemployee.get('email')?.errors?.['required']">email required</p>
+            <p *ngIf="createemployee.get('email')?.errors?.['email']">invalid email</p> 
+        </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="dob"> dob:</label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="dob"  formControlName="dob" class="form-control" placeholder="Enter dob" name="dob" [ngClass]="createemployee.get('dob')?.invalid && createemployee.get('dob')?.touched? 'ab':'sc'" >
+        <div class="N" *ngIf="createemployee.get('dob')?.invalid && createemployee.get('dob')?.touched">
+            <p *ngIf="createemployee.get('dob')?.errors?.['required']">dob required</p>
+            <p *ngIf="createemployee.get('dob')?.errors?.['dob']">invalid dob</p> 
+        </div>
+        </div>
+    </div>
+    <div formGroupName="address">
+        <label>address</label>
+    <div class="row form-group">
+            <div class="col-sm-4">
+            <label for="addressline"> addressline:</label>
+            </div>
+            <div class="col-sm-8">
+            <input type="text" id="addressline" formControlName="addressline" class="form-control" placeholder="Enter addressline" name="addressline" [ngClass]="createemployee.get('address')?.get('addressline')?.invalid && createemployee.get('address')?.get('addressline')?.touched? 'ab':'sc'">
+            <div class="N" *ngIf="createemployee.get('address')?.get('addressline')?.invalid && createemployee.get('address')?.get('addressline')?.touched">
+                <p *ngIf="createemployee.get('address')?.get('addressline')?.errors?.['required']">required addressline</p>
+                <p *ngIf="createemployee.get('address')?.get('addressline')?.errors?.['min']">min 3 digits required</p>
+                <p *ngIf="createemployee.get('address')?.get('addressline')?.errors?.['max']">max 30 digits required</p>
+            </div>
+    
+            </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="city"> city:</label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="city" formControlName="city" class="form-control" placeholder="Enter city" name="city" [ngClass]="createemployee.get('address')?.get('city')?.invalid && createemployee.get('address')?.get('city')?.touched? 'ab':'sc'">
+        <div class="N" *ngIf="createemployee.get('address')?.get('city')?.invalid && createemployee.get('address')?.get('city')?.touched">
+            <p *ngIf="createemployee.get('address')?.get('city')?.errors?.['required']">required city</p>
+            
+        </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <label for="state"> state:</label>
+        </div>
+        <div class="col-sm-8">
+            <input type="text" id="state" formControlName="state" class="form-control" placeholder="Enter state" name="state" [ngClass]="createemployee.get('address')?.get('state')?.invalid && createemployee.get('address')?.get('state')?.touched? 'ab':'sc'">
+        <div class="N" *ngIf="createemployee.get('address')?.get('state')?.invalid && createemployee.get('address')?.get('state')?.touched">
+            <p *ngIf="createemployee.get('address')?.get('state')?.errors?.['required']">required state</p>
+            
+        </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <label for="pincode"> pincode:</label>
+        </div>
+        <div class="col-sm-8">
+            <input type="text" id="pincode" formControlName="pincode" class="form-control" placeholder="Enter pincode" name="pincode" [ngClass]="createemployee.get('address')?.get('pincode')?.invalid && createemployee.get('address')?.get('pincode')?.touched? 'ab':'sc'">
+        <div class="N" *ngIf="createemployee.get('address')?.get('pincode')?.invalid && createemployee.get('address')?.get('pincode')?.touched">
+            <p *ngIf="createemployee.get('address')?.get('pincode')?.errors?.['required']">required pincode</p>
+            <p *ngIf="createemployee.get('address')?.get('pincode')?.errors?.['min']">min 6 digits required</p>
+            <p *ngIf="createemployee.get('address')?.get('pincode')?.errors?.['max']">max 6 digits required</p>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div>
+        <h4>education</h4>
+        <div formArrayName="education">
+            <div *ngFor="let item of educationFormArray.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <label>qualification</label>
+                    <input type="text"  [ngClass]="educationFormArray.controls[i].get('qualification')?.invalid && educationFormArray.controls[i].get('qualification')?.touched? 'ab':'sc'">
+                    <div class="N" *ngIf="educationFormArray.controls[i].get('qualification')?.touched">
+                        <P *ngIf="educationFormArray.controls[i].get('qualification')?.errors?.['required']">required qualification</P>
+                    </div>
+                    <label>year</label>
+                    <input type="number"  [ngClass]="educationFormArray.controls[i].get('year')?.invalid && educationFormArray.controls[i].get('year')?.touched? 'ab':'sc'">
+                    <div class="N" *ngIf="educationFormArray.controls[i].get('year')?.touched">
+                        <P *ngIf="educationFormArray.controls[i].get('year')?.errors?.['required']">required year</P>
+                    </div>
+                    <label>percentage</label>
+                    <input type="text"  [ngClass]="educationFormArray.controls[i].get('percentage')?.invalid && educationFormArray.controls[i].get('percentage')?.touched? 'ab':'sc'">
+                    <div class="N" *ngIf="educationFormArray.controls[i].get('percentage')?.touched">
+                        <P *ngIf="educationFormArray.controls[i].get('percentage')?.errors?.['required']">required percentage</P>
+                    </div>
+                    <button (click)="delete(i)">delete</button>
+                </div>
+            </div>
+        </div>
+        <button (click)="add()">add</button>
+    </div>
+    <div>
+        <h4>role</h4>
+        <label>Frontend Engineer</label>
+                <input type="radio" name="role" formControlName="role" value="Frontend Engineer">
+                <label>Backend Engineer</label>
+                <input type="radio" name="role" formControlName="role" value="Backend Engineer">
+        <div *ngIf="createemployee.get('role')?.value=='Frontend Engineer'">
+                    <label>HTML:</label>
+                    <input type="text" formControlName="HTML">
+                <br>
+                    <label>CSS:</label>
+                    <input type="text" formControlName="CSS">
+                <br>
+                    <label>JAVASCRIPT:</label>
+                    <input type="text" formControlName="JAVA SCRIPT">
+                <br>
+                <label>ANGULAR:</label>
+                    <input type="text" formControlName="ANGULAR">
+        </div>
+        <div *ngIf="createemployee.get('role')?.value=='Backend Engineer'">
+            <label>nodejs:</label>
+            <input type="text" formControlName="nodejs">
+            <br>
+            <label>expressjs:</label>
+            <input type="text" formControlName="expressjs">
+            <br>
+            <label>mongodb:</label>
+            <input type="text" formControlName="mongodb">
+        </div>
+    </div>
+    <button (click)="submit()">submit</button>
+</form>

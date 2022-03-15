@@ -1,0 +1,19 @@
+.grandparent{
+    height: 100%;
+    width: 100vw;
+    background-color: aqua;
+    display: flex;
+    min-height: 100vh;
+}
+.parent1{
+    height: 100%;
+    width: 20%;
+    background-color: green;
+    justify-content: center;
+    text-align: center;
+}
+.parent2{
+    height: 100%;
+    width: 80%;
+    background-color: aqua;
+}

@@ -1,0 +1,10 @@
+div{
+    height: auto;
+    min-height: 70vh;
+    width: 70%;
+    background-color: darksalmon;
+    margin-left: 150px;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-top: 20px;
+}

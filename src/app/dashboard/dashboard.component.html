@@ -1,0 +1,23 @@
+<div class="grandparent">
+    <div class="parent1">
+        <div>
+            <h3>DHARAM MAHESH</h3>
+            <p>darammahesh1998@gmail.com</p>
+        </div>
+        <hr>
+        <div>
+            <p routerLink="allemployees">ALL EMPLOYEES</p>
+            <p routerLink="createemployee">CREATE EMPLOYEE</p>
+            <p routerLink="contact-us">CONTACT-US</p>
+            <p routerLink="about-us">ABOUT-US</p>
+            <p routerLink="roles">ROLES</p>
+            <p routerLink="employee-details">EMPLOYEE-DETAILS</p>
+            <p routerLink="communication">COMMUNICATION</p>
+            <p routerLink="shopping">SHOPPING</p>
+            <button (click)="logout()">logout</button>
+        </div>
+    </div>
+    <div class="parent2">
+        <router-outlet></router-outlet>
+    </div>
+</div> 
